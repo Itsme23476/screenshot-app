@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     MousePointer2, Pen, MoveUpRight, Square, Circle, Type, Droplet,
     Undo, Redo, Copy, Download, X

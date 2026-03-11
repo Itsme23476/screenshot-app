@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { Stage, Layer, Image as KonvaImage, Line, Rect, Ellipse, Arrow, Text } from 'react-konva';
 import useImage from 'use-image';
 import AnnotationToolbar from './AnnotationToolbar';

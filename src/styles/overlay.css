@@ -1,0 +1,126 @@
+/* ── Overlay Container ── */
+.overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    cursor: crosshair;
+    z-index: 9999;
+}
+
+.overlay.captured {
+    cursor: default;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay.idle {
+    pointer-events: none;
+}
+
+/* ── Dimmed Background ── */
+.overlay-dim {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ── Selection Cutout (clear area) ── */
+.selection-cutout {
+    position: fixed;
+    background: transparent;
+    z-index: 2;
+    box-shadow:
+        0 0 0 9999px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Selection Border ── */
+.selection-border {
+    position: fixed;
+    border: 2px solid #4A9EFF;
+    border-radius: 1px;
+    z-index: 3;
+    pointer-events: none;
+    box-shadow:
+        0 0 0 1px rgba(74, 158, 255, 0.3),
+        0 0 12px rgba(74, 158, 255, 0.25);
+}
+
+/* ── Selection Dimensions Label ── */
+.selection-dimensions {
+    position: fixed;
+    z-index: 4;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-variant-numeric: tabular-nums;
+    backdrop-filter: blur(8px);
+    letter-spacing: 0.3px;
+}
+
+/* ── Crosshair Hint ── */
+.crosshair-hint {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 24px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ── Captured Preview ── */
+.capture-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 10;
+    animation: scaleIn 0.2s ease;
+}
+
+.capture-preview {
+    border-radius: 8px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* ── Animations ── */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,187 @@
+/* ── Action Toolbar ── */
+.action-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    background: rgba(30, 30, 30, 0.92);
+    border-radius: 12px;
+    backdrop-filter: blur(20px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: toolbarSlideUp 0.25s ease;
+}
+
+/* ── Toolbar Buttons ── */
+.toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: #e0e0e0;
+    background: transparent;
+    font-family: inherit;
+}
+
+.toolbar-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.toolbar-btn:active {
+    transform: scale(0.96);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Copy Button ── */
+.copy-btn:hover {
+    background: rgba(74, 158, 255, 0.2);
+    color: #4A9EFF;
+}
+
+/* ── Save Button ── */
+.save-btn:hover {
+    background: rgba(52, 199, 89, 0.2);
+    color: #34C759;
+}
+
+/* ── Cancel Button ── */
+.cancel-btn:hover {
+    background: rgba(255, 69, 58, 0.2);
+    color: #FF453A;
+}
+
+/* ── Divider ── */
+.toolbar-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0 4px;
+}
+
+/* ── Animations ── */
+@keyframes toolbarSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Annotation Toolbar ── */
+.annotation-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(30, 30, 30, 0.95);
+    border-radius: 12px;
+    backdrop-filter: blur(20px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    animation: toolbarSlideUp 0.25s ease;
+    margin-top: 16px;
+}
+
+.toolbar-section {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.colors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
+
+.tool-btn,
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.tool-btn:hover,
+.icon-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.tool-btn.active {
+    background: rgba(74, 158, 255, 0.2);
+    color: #4A9EFF;
+}
+
+.icon-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.color-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-btn.active {
+    border: 2px solid #fff;
+    transform: scale(1.15);
+}
+
+.stroke-slider {
+    width: 80px;
+    accent-color: #4A9EFF;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    transition: all 0.15s ease;
+}
+
+.action-btn:hover {
+    background: rgba(74, 158, 255, 0.2);
+    color: #4A9EFF;
+}
+
+.action-btn.danger:hover {
+    background: rgba(255, 69, 58, 0.2);
+    color: #FF453A;
+}
